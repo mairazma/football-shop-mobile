@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:amaranth_sportcenter/menu.dart';
+import 'package:amaranth_sportcenter/screens/menu.dart';
 
 
 void main() {

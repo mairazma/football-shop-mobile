@@ -64,3 +64,34 @@ Hot reload adalah fitur Flutter yang membantu developer untuk mengubah tampilan 
 
 **7. Jelaskan bagaimana kamu menambahkan navigasi untuk berpindah antar layar di aplikasi Flutter.**  
 Flutter mendukung perpindahan antarlayar pada aplikasi menggunakan konsep stack. Setiap layar baru dibuka, layar tersebut akan ditambahkan ke-stack. Dengan begitu, ketika pengguna ingin kembali ke halaman sebelumnya, stack hanya perlu di-pop. Konsep ini mirip dengan undo-redo pada umumnya.
+
+# TUGAS 8
+**1. Jelaskan perbedaan antara Navigator.push() dan Navigator.pushReplacement() pada Flutter. Dalam kasus apa sebaiknya masing-masing digunakan pada aplikasi Football Shop kamu?**  
+Perbedaan kedua method tersebut dapat dipahami dengan memahami struktur data Stack. Flutter menggunakan Stack untuk menyimpan histori halaman-halaman yang diakses pengguna. Setiap pengguna pindah ke halaman baru, halaman sebelumnya akan di-push menjadi Top of the Stack. Sehingga, jika pengguna ingin kembali ke halaman sebelumnya, halaman tersebut bisa di-pop dari Stack.  
+
+Sesuai namanya, `Navigator.push()` berarti ketika pengguna akan pindah halaman baru, halaman sebelumnya akan di-push ke stack menjadi elemen baru. Menambahkan jumlah stack pada sistem. Namun, jika digunakan `Navigator.pushReplacement()`, halaman baru akan 'menggantikan' halaman sebelumnya pada stack. Hal ini membuat jumlah elemen pada stack tetap.   
+
+**2. Bagaimana kamu memanfaatkan hierarchy widget seperti Scaffold, AppBar, dan Drawer untuk membangun struktur halaman yang konsisten di seluruh aplikasi?**  
+Scaffold menyediakan stuktur standar aplikasi yang familiar oleh pengguna. Kerangka utama Scaffold membantu konsistensi antarhalaman sehingga meningkatkan pengalaman pengguna. AppBar dan Drawer menjadi salah dua atribut utama dari Scaffold yang umum digunakan pada sebuah aplikasi. AppBar menjadi identitas utama sebuah aplikasi, menjadi penanda di setiap halaman, aplikasi apa yang sedang pengguna gunakan. Drawer sendiri istilahnya seperti NavBar pada website mode mobile. Drawer menjadi shortcut pengguna untuk berpindah-pindah halaman. Terutama jika halamannya tidak berhubungan.  
+
+**3. Dalam konteks desain antarmuka, apa kelebihan menggunakan layout widget seperti Padding, SingleChildScrollView, dan ListView saat menampilkan elemen-elemen form? Berikan contoh penggunaannya dari aplikasi kamu.**  
+- **Padding**  
+    Sesuai pengertian pada umumnya, padding menjadi pemberi jarak antar-widget agak tidak terlalu rapat dan meningkatkan desain antarmuka.
+    _Contoh penggunaan:_  
+    `productlist_form.dart`  
+    > Padding membantu pengguna membedakan input baru (antar field input), input mana untuk menginput apa, sehingga pengguna tidak salah input.  
+
+- **SingleChildScrollView**  
+    SingleChildScrollView memastikan sebuah widget (biasanya column) pada form tetap bisa di-scroll ketika tinggi layar tidak cukup, misalnya di perangkat kecil atau saat keyboard muncul. Hal ini membantu ke-responsifan aplikasi di ukuran device yang berbeda dari pengguna.  
+    _Contoh penggunaan:_  
+    `productlist_form.dart`  
+    > SingleChildScrollView digunakan pada file ini untuk membungkus Column() yang berisi field-field input form untuk memungkinkan pengguna meng-scroll field-field tersebut jika layar terlalu kecil.  
+
+- **ListView**  
+    ListView membantu item-item widget dapat discroll sehingga meningkatkan antarmuka.   
+    _Contoh penggunaan:_  
+    `left_drawer.dart`  
+    > Pada file ini, ListView digunakan pada bagian baris-baris tombol shortcut di drawer. ListView digunakan karena list tombol ini cenderung statis, sehingga dapat di-load langsung bersamaan dan tidak berubah. ListView memungkinkan peng-scroll-an tombol jika tombol makin banyak nantinya.  
+
+**4. Bagaimana kamu menyesuaikan warna tema agar aplikasi Football Shop memiliki identitas visual yang konsisten dengan brand toko?**
+Untuk menjaga warna tema agar aplikasi Amaranth Sportcenter memiliki identitas visual yang konsisten, kita bisa mengaturnya dengan ThemeData yang ada di file `main.dart`. ThemeData menyediakan atribut-atribut dasar warna tema seperti backgroundColor, foregroundColor, dan lain sebagainya agar ke depannya, warna-warna elemen/widget dapat diambil dari data tersebut sehingga ada konsistensi antarhalaman.
