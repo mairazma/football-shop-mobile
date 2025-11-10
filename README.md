@@ -93,5 +93,5 @@ Scaffold menyediakan stuktur standar aplikasi yang familiar oleh pengguna. Keran
     `left_drawer.dart`  
     > Pada file ini, ListView digunakan pada bagian baris-baris tombol shortcut di drawer. ListView digunakan karena list tombol ini cenderung statis, sehingga dapat di-load langsung bersamaan dan tidak berubah. ListView memungkinkan peng-scroll-an tombol jika tombol makin banyak nantinya.  
 
-**4. Bagaimana kamu menyesuaikan warna tema agar aplikasi Football Shop memiliki identitas visual yang konsisten dengan brand toko?**
+**4. Bagaimana kamu menyesuaikan warna tema agar aplikasi Football Shop memiliki identitas visual yang konsisten dengan brand toko?**  
 Untuk menjaga warna tema agar aplikasi Amaranth Sportcenter memiliki identitas visual yang konsisten, kita bisa mengaturnya dengan ThemeData yang ada di file `main.dart`. ThemeData menyediakan atribut-atribut dasar warna tema seperti backgroundColor, foregroundColor, dan lain sebagainya agar ke depannya, warna-warna elemen/widget dapat diambil dari data tersebut sehingga ada konsistensi antarhalaman.
